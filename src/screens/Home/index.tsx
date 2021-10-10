@@ -53,6 +53,13 @@ export function Home() {
   // creates a function to handle sign out
     // try to call and wait signOut
     // if fails, display an Alert with the title "Erro SignOut" and message "Ocorreu um erro ao tentar se deslogar do app"
+    async function handleSignOut() {
+      try {
+        await signOut();
+      } catch (error) {
+        Alert.alert("Erro SignOut", "Ocorreu um erro ao tentar se deslogar do app");
+      }
+    }
 
   async function getTopGames() {
     try {
@@ -68,7 +75,7 @@ export function Home() {
   async function getUserFollowedStreamsAvatar(userFollowedStreamsData: UserFollowedStreams[]) {
     return Promise.all(userFollowedStreamsData.map(async (item) => {
         try {
-          const response = await api.get(`/users?id=${item.user_id}`);
+          const response = await api.get(`/users?id=${item.id}`);
 
           return { ...item, user_avatar_url: response.data.data[0].profile_image_url }
         } catch (error) {
@@ -81,7 +88,6 @@ export function Home() {
   async function getUserFollowedStreams() {
     try {
       const response = await api.get<{ data: UserFollowedStreams[] }>(`/streams/followed?user_id=${user.id}`);
-
       const formattedResponse = await getUserFollowedStreamsAvatar(response.data.data);
       
       if (formattedResponse) {
@@ -121,11 +127,14 @@ export function Home() {
           <UserInfoText style={{ fontFamily: theme.fonts.bold }}>{user.display_name}</UserInfoText>
         </UserInfo>
 
-        {/* <SignOutButton onPress={}>
-          Verify if isLoggingOut is true
-          If it is, show an ActivityIndicator
-          Otherwise, show Feather's power icon
-        </SignOutButton> */}
+        <SignOutButton onPress={handleSignOut}>
+          {isLoggingOut
+          ? 
+            <ActivityIndicator size={25} color={theme.colors.white} />
+          :
+            <Feather name="power" size={24} color={theme.colors.white} />
+          }
+        </SignOutButton>
       </Header>
 
       <UserFollowedStreams>
