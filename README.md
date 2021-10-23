@@ -11,10 +11,13 @@
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/rafadevx/desafio-login-twitch?style=plastic">
   
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/rafadevx/desafio-login-twitch">
+    
+  <img alt="GitHub" src="https://img.shields.io/github/license/RAFADEVX/desafio-login-twitch">
 
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
 </p>
 
 
@@ -47,10 +50,12 @@ $ yarn install
 $ expo start
 ```
 
+## :memo: License
+This project is under the MIT license. See the [LICENSE](https://github.com/rafadevx/desafio-login-twitch/blob/master/LICENSE) for more information.
 
 ---
 
-:computer: Made by Rafael Del Grossi [Get in touch!](www.linkedin.com/in/rafael-del-grossi-b9063831)
+:computer: Made by Rafael Del Grossi :speech_balloon: [Get in touch!](www.linkedin.com/in/rafael-del-grossi-b9063831)
 
 [nodejs]: https://nodejs.org/
 [yarn]: https://yarnpkg.com/
